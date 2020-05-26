@@ -1,13 +1,19 @@
 .App {
   text-align: center;
-  background-image: url('./assets/background.png');
+  background-color: #3a3e40;
+  background-image: url('./assets/background_45.png');
   background-attachment: fixed;
   height: 1000px;
+  width: 100%;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  margin: 0px 30px 0px 30px;
+
+  /* does not work with mobile view */
+  align-self: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -18,10 +24,10 @@
 
 .App-header {
   /* background-color: #282c34; */
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
@@ -29,6 +35,34 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.button {
+  background-color: white !important;
+  border: none;
+  color: #3a3e40;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+button {
+  background-color: white;
+  border: none;
+  color: #3a3e40;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
 }
 
 @keyframes App-logo-spin {

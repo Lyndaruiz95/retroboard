@@ -1,0 +1,33 @@
+.header{
+  /* background-color: #3a3e40; */
+  min-height: 15vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0px 30px 0px 30px;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  /* position: fixed; */
+}
+
+.header-logo{
+  text-align: left;
+  margin-left: 13px;
+}
+
+.logo {
+  height: 7vmin;
+}
+
+.header-divider{
+  background-color: white !important;
+  height: 2px;
+  border-radius: 12px;
+}
+
+Button{
+  background-color: white;
+};
+
+
+

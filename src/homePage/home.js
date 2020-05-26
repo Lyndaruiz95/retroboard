@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../assets/logo_white.png';
-import Retroboard from '../retroboard/retroboard'
+import Retroboard from '../retroboard/retroboard';
+import CreateRetroBoard from '../createRetroBoard/createRetroBoard'
 
 import {
   BrowserRouter as Router,
@@ -20,12 +21,7 @@ const Home = (props) => {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-        <button>
-          <Link to='/r'> Create Retroboard</Link>
-        </button>
-
-      
-
+      <CreateRetroBoard/>
     </div>
   )
 }

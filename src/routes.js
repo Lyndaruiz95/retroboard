@@ -5,7 +5,6 @@ import { Route } from 'react-router-dom'
 // Import all comonents
 import App from './App'
 import CreateRetroBoard from './createRetroBoard/createRetroBoard'
-import Retroboard from './retroboard/retroboard'
 import Home from './homePage/home';
 
 
@@ -16,6 +15,5 @@ import Home from './homePage/home';
 export default (
   <Route exact={true} path="/" component={Home}>
     <Route path="/createretroboard" component={CreateRetroBoard} />
-    <Route path="/retroboard" component={Retroboard} />
   </Route>
 );
