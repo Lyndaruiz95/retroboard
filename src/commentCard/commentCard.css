@@ -1,3 +1,7 @@
+.comment-card{
+  margin-bottom: 10px;
+}
+
 .card-actions{
   margin: 0px 10px 0px 10px; 
 }
@@ -8,3 +12,4 @@
   margin: 8px;
   border-radius: 4px; 
 }
+

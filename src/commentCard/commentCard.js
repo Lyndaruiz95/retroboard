@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './commentCard.css'
 
 
@@ -40,14 +40,38 @@ function removeCommentCard (props){
 
 export function CommentCard (props) {
 
-  return (
-    <div>
-      <Card>
+// let [comments, setComment] = useState({})
 
+  let comments = [
+    {
+      id:'1234',
+      commentText: 'comment1',
+      heartCount: 0,
+    },
+    {
+      id:'001',
+      commentText: 'comment2',
+      heartCount: 0,
+    }
+
+  ]
+
+  useEffect(()=>{
+    
+  })
+
+
+  const commentList = comments.map((comment)=>
+      <Card className="comment-card">
         <CardContent>
-          <TextField fullWidth label="write comment here..." variant="outlined" multiline  />
+          <TextField 
+            fullWidth
+            label="write comment here..."
+            variant="outlined"
+            multiline
+            defaultValue={comment.commentText}
+          />
         </CardContent>
-
         <CardActions className="card-actions">
           <Grid container
           direction="row"
@@ -59,7 +83,7 @@ export function CommentCard (props) {
               
             </Grid>
             <Grid item >
-              value
+              {comment.heartCount}
             </Grid>
             <Grid item >
               <Icon>chat_bubble_outline</Icon>
@@ -78,9 +102,14 @@ export function CommentCard (props) {
             
           </CardActions>
         </CardContent>
-        
-
       </Card>
+
+  )
+
+
+  return (
+    <div>
+      {commentList}
     </div>
   )
 

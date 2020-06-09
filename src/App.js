@@ -8,14 +8,11 @@ import {Retroboard, Retro} from './retroboard/retroboard'
 import { Switch, Route } from "react-router-dom";
 
 
-// import firebase
-//import * as firebase from "firebase/app";
-//import { firebaseConfig } from '../app-config'
 
 
-
-class App extends React.Component { 
+class Appp extends React.Component { 
    // initalize state here for rendering
+   // Don't need state if using hooks
    constructor(props){
     super(props)
     this.state = { 
@@ -26,15 +23,16 @@ class App extends React.Component {
 
   // Q: when do we need to initialize our api?
 
-
   render()
   {
-    //console.log('retro', Retro())
     return (
       <div className="App">
         <Switch>
           <Route exact={true} path="/">
             <Home/>
+          </Route>
+          <Route path="/r/:id">
+            <Retro/>
           </Route>  
           <Route path="/r">
             <Retro/>
@@ -45,6 +43,25 @@ class App extends React.Component {
       </div>
     )
   }
+}
+
+const App = () => {
+  return(
+    <div className="App">
+      <Switch>
+        <Route exact={true} path="/">
+          <Home/>
+        </Route>
+        <Route path="/r/:id">
+          <Retro/>
+        </Route>  
+        <Route path="/r">
+          <Retro/>
+          {/* <Retroboard/> */}
+        </Route> 
+      </Switch>
+    </div>
+  )
 
 }
 
