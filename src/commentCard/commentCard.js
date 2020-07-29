@@ -39,29 +39,22 @@ function removeCommentCard (props){
 
 
 export function CommentCard (props) {
+  console.log('CommentCard-props',props)
 
-// let [comments, setComment] = useState({})
-
-  let comments = [
-    {
-      id:'1234',
-      commentText: 'comment1',
-      heartCount: 0,
-    },
-    {
-      id:'001',
-      commentText: 'comment2',
-      heartCount: 0,
-    }
-
-  ]
+  // upsading the list of comments
+  let [comments, setComment] = useState(props.props)
+  console.log('commentCard-comments', comments)
 
   useEffect(()=>{
+    console.log('updating props- commentCard')
+    setComment(props.props)
     
   })
 
+  let commentCardList
 
-  const commentList = comments.map((comment)=>
+  if (comments) {
+    commentCardList = comments.map((comment)=>
       <Card className="comment-card">
         <CardContent>
           <TextField 
@@ -104,12 +97,14 @@ export function CommentCard (props) {
         </CardContent>
       </Card>
 
-  )
+  ) }
+
+
 
 
   return (
     <div>
-      {commentList}
+      {commentCardList}
     </div>
   )
 

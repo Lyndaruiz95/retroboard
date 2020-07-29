@@ -13,6 +13,7 @@ export function InitializeFirebase() {
 
 
 export function createNewBoard(boardId) {
+  console.log('createdd')
   try{
     firebase.initializeApp(firebaseConfig);
   }catch(err){

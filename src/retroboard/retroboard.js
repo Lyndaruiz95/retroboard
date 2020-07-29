@@ -16,20 +16,46 @@ let retroQuestions = [
   "what went well?",
   "how can we do better?",
   "what is soemthing new we can do?"
-
 ]
 
-let retroQ = {
-    text: "what went well?",
-    icon: "sentiment_very_satisfied"
-  }
 
+function getBoardComments (){
+
+}
 
 
 function CardContainer (){
   
+  let[comments, updateComments] = useState({
 
-  // let sectionName = "what went well?"
+  })
+
+  let[commentId, setCommentId] = useState(0)
+  console.log()
+  useEffect(()=>{
+    console.log('comments',comments)
+  })
+
+
+  //---------------------------------------------------------- 
+  function createNewComment(count){
+
+    setCommentId(commentId += 1)
+
+    console.log('comments-create', comments)
+
+    updateComments(
+      {...comments, [commentId]: {
+        id:commentId,
+        value:'',
+        heartcount: 0
+
+      }}
+      )
+  }
+
+  //---------------------------------------------------------- 
+
   // figure out how to render each value in the array
 
   for(let question of retroQuestions ){
@@ -62,18 +88,17 @@ function CardContainer (){
                   {retroQuestions[0]}
                 </Grid>
                 <Grid item>
-                  <Icon>add_circle_outline</Icon>
+                  <Icon onClick={()=>createNewComment(0)}>
+                    add_circle_outline
+                  </Icon>
                 </Grid>
               </Grid>
               
-
-
             </div>
           </div>
 
-
           <div className="section-comment">
-            <CommentCard/>
+            {/* <CommentCard props={comments[0]}/> */}
           </div>
 
 
@@ -103,7 +128,9 @@ function CardContainer (){
                   {retroQuestions[0]}
                 </Grid>
                 <Grid item>
-                  <Icon>add_circle_outline</Icon>
+                  <Icon onClick={()=>createNewComment()}>
+                    add_circle_outline
+                  </Icon>
                 </Grid>
               </Grid>
               
@@ -114,7 +141,7 @@ function CardContainer (){
 
 
           <div className="section-comment">
-            <CommentCard/>
+            {/* <CommentCard props={comments[1]}/> */}
           </div>
 
 
@@ -135,7 +162,9 @@ function CardContainer (){
                 alignItems="flex-start" 
               >
                 <Grid item>
-                  <Icon>sentiment_very_satisfied</Icon>
+                  <Icon onClick={()=>createNewComment()}>
+                    sentiment_very_satisfied
+                  </Icon>
                 </Grid>
                 <Grid item className="title">
                   {retroQuestions[0]}
@@ -152,7 +181,7 @@ function CardContainer (){
 
 
           <div className="section-comment">
-            <CommentCard/>
+            {/* <CommentCard props={comments[2]}/> */}
           </div>
 
 
@@ -168,10 +197,11 @@ function CardContainer (){
   )
 }
 
-function createNewComment (props){
-// create comment when clicked
+// function createNewComment(props){
+// // create comment when clicked
+//   console.log('clicked')
 
-}
+// }
 
 function addAction (){
 

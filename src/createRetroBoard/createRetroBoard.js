@@ -23,7 +23,7 @@ import { func } from 'prop-types';
 let clicked = false
 
 
-export function CreateRetroBoard (props) {
+export function CreateRetroBoard () {
   let boardId = Math.floor(Math.random() * Math.floor(10000000)).toString()
   let path = 'r/' + boardId.toString()
 
@@ -41,7 +41,7 @@ export function CreateRetroBoard (props) {
 
   return (
     <Link to={path}> 
-      <button className="" onClick={createBoard(boardId)}>
+      <button className="" onClick={()=>createBoard(boardId)}>
         create new retroboard
       </button>
     </Link>
@@ -49,7 +49,6 @@ export function CreateRetroBoard (props) {
 }
 
 function createBoard (boardId) {
-  //InitializeFirebase()
   createNewBoard(boardId)
 }
 
